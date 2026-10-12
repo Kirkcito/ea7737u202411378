@@ -1,0 +1,23 @@
+<mat-card appearance="outlined" class="summary-card" [attr.aria-label]="sportsCenter().name">
+  <mat-card-header>
+    <mat-card-title>{{ sportsCenter().name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="summary-content">
+    @if (centerReservations().length > 0) {
+      <mat-list [attr.aria-label]="'sports-center-summary.reservations' | translate">
+        @for (reservation of centerReservations(); track reservation.id) {
+          <mat-list-item>
+            <span matListItemTitle>{{ reservation.participantName }}</span>
+            <span matListItemLine>{{ 'sports-center-summary.participants' | translate }}: {{ reservation.participants }}</span>
+          </mat-list-item>
+        }
+      </mat-list>
+    } @else {
+      <p class="empty">{{ 'sports-center-summary.empty' | translate }}</p>
+    }
+  </mat-card-content>
+  <mat-card-actions class="summary-footer">
+    <span>{{ 'sports-center-summary.total-participants' | translate }}: <strong>{{ totalParticipants() }}</strong></span>
+    <span>{{ 'sports-center-summary.available-capacity' | translate }}: <strong>{{ availableCapacity() }}</strong></span>
+  </mat-card-actions>
+</mat-card>

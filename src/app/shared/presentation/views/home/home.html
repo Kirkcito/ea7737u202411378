@@ -1,0 +1,12 @@
+<section aria-labelledby="home-title">
+  <h1 id="home-title">{{ 'home.title' | translate }}</h1>
+  <p class="tagline">{{ 'home.content' | translate }}</p>
+</section>
+
+<section aria-labelledby="my-sports-centers-title">
+  <h2 id="my-sports-centers-title">{{ 'home.my-sports-centers' | translate }}</h2>
+  @if (store.error()) {
+    <p class="error" role="alert">{{ store.error()! | translate }}</p>
+  }
+  <app-sports-center-summary-list [sportsCenters]="store.sportsCenters()" [reservations]="store.reservations()"/>
+</section>

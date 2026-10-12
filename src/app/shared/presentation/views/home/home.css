@@ -1,0 +1,8 @@
+.tagline {
+  font: var(--mat-sys-title-medium);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.error {
+  color: var(--mat-sys-error);
+}

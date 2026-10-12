@@ -1,0 +1,28 @@
+.reservation-create {
+  max-width: 640px;
+}
+
+.subtitle {
+  color: var(--mat-sys-on-surface-variant);
+  margin-top: -8px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  margin-bottom: 8px;
+}
+
+.error {
+  color: var(--mat-sys-error);
+  margin: 0;
+}

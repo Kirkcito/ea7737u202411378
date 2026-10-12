@@ -1,0 +1,29 @@
+<mat-toolbar class="toolbar" role="banner">
+  @if (isHandset()) {
+    <button mat-icon-button type="button" (click)="sidenav.toggle()" [attr.aria-label]="'toolbar.toggle-menu' | translate">
+      <mat-icon>menu</mat-icon>
+    </button>
+  }
+  <img class="logo" src="assets/images/urbanfit-logo.jpg" [alt]="'toolbar.logo-alt' | translate"/>
+  <span class="title">{{ 'toolbar.title' | translate }}</span>
+  <span class="spacer"></span>
+  <app-language-switcher/>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [mode]="isHandset() ? 'over' : 'side'" [opened]="!isHandset()" class="sidenav"
+               [attr.aria-label]="'navigation.label' | translate">
+    <mat-nav-list>
+      @for (option of options; track option.path) {
+        <a mat-list-item [routerLink]="option.path" routerLinkActive #link="routerLinkActive" [activated]="link.isActive"
+           (click)="isHandset() && sidenav.close()">
+          <mat-icon matListItemIcon aria-hidden="true">{{ option.icon }}</mat-icon>
+          {{ option.label | translate }}
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" role="main">
+    <router-outlet/>
+  </mat-sidenav-content>
+</mat-sidenav-container>

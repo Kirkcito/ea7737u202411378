@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  gap: 12px;
+  background-color: green;
+  color: var(--mat-sys-on-primary);
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.title {
+  font: var(--mat-sys-title-large);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  flex: 1;
+}
+
+.sidenav {
+  width: 240px;
+}
+
+.content {
+  padding: 24px;
+}
+
+@media (max-width: 599px) {
+  .title {
+    font: var(--mat-sys-title-medium);
+  }
+
+  .content {
+    padding: 16px;
+  }
+}

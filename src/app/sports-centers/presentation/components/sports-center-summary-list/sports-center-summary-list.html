@@ -1,0 +1,7 @@
+<mat-grid-list [cols]="columns()" rowHeight="360px" gutterSize="16px">
+  @for (sportsCenter of sportsCenters(); track sportsCenter.id) {
+    <mat-grid-tile>
+      <app-sports-center-summary [sportsCenter]="sportsCenter" [reservations]="reservations()"/>
+    </mat-grid-tile>
+  }
+</mat-grid-list>

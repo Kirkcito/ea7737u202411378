@@ -1,0 +1,61 @@
+{
+  "toolbar": {
+    "title": "UrbanFit Sports",
+    "logo-alt": "Logo de UrbanFit Sports Centers",
+    "language": "Idioma de la interfaz",
+    "toggle-menu": "Mostrar u ocultar el menú"
+  },
+  "navigation": {
+    "label": "Navegación principal",
+    "home": "Inicio",
+    "new-reservation": "Nueva Reserva"
+  },
+  "home": {
+    "title": "Inicio",
+    "content": "Reservas inteligentes y gestión de capacidad para centros deportivos.",
+    "my-sports-centers": "Mis Centros Deportivos"
+  },
+  "sports-center-summary": {
+    "reservations": "Reservas",
+    "participants": "Participantes",
+    "empty": "Vacío",
+    "total-participants": "Total de Participantes",
+    "available-capacity": "Capacidad Disponible"
+  },
+  "reservation-create": {
+    "title": "Nueva Reserva",
+    "subtitle": "Registra participantes en tu centro deportivo",
+    "activity-type": "Tipo de actividad",
+    "available-capacity": "Capacidad disponible",
+    "participant-name": "Nombre del participante",
+    "participants": "Participantes",
+    "loading-weather": "Obteniendo la temperatura actual...",
+    "current-temperature": "Temperatura actual",
+    "retry": "Reintentar",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "errors": {
+      "activity-type-required": "Selecciona un tipo de actividad.",
+      "participant-name-required": "Ingresa el nombre del participante.",
+      "participants-min": "Los participantes deben ser mayores que cero."
+    }
+  },
+  "activity-types": {
+    "fitness": "Fitness",
+    "yoga": "Yoga",
+    "swimming": "Natación",
+    "cycling": "Ciclismo"
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "message": "No se encontró la ruta {{path}}.",
+    "back-home": "Volver al Inicio"
+  },
+  "errors": {
+    "api-unavailable": "El servicio de reservas no está disponible. Verifica que el fake API esté en ejecución.",
+    "request-failed": "No se pudo completar la solicitud. Inténtalo de nuevo.",
+    "weather-unavailable": "No se pudo obtener la temperatura actual. No se puede crear la reserva hasta tener una temperatura válida.",
+    "capacity-exceeded": "Los participantes superan la capacidad disponible del centro deportivo.",
+    "sports-center-not-found": "Ningún centro deportivo ofrece la actividad seleccionada."
+  }
+}

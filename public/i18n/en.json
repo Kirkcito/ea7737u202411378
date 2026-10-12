@@ -1,0 +1,61 @@
+{
+  "toolbar": {
+    "title": "UrbanFit Sports",
+    "logo-alt": "UrbanFit Sports Centers logo",
+    "language": "Interface language",
+    "toggle-menu": "Toggle navigation menu"
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "home": "Home",
+    "new-reservation": "New Reservation"
+  },
+  "home": {
+    "title": "Home",
+    "content": "Smart Reservations and Capacity Management for Sports Centers.",
+    "my-sports-centers": "My Sports Centers"
+  },
+  "sports-center-summary": {
+    "reservations": "Reservations",
+    "participants": "Participants",
+    "empty": "Empty",
+    "total-participants": "Total Participants",
+    "available-capacity": "Available Capacity"
+  },
+  "reservation-create": {
+    "title": "New Reservation",
+    "subtitle": "Register Participants at Your Sports Center",
+    "activity-type": "Activity type",
+    "available-capacity": "Available capacity",
+    "participant-name": "Participant name",
+    "participants": "Participants",
+    "loading-weather": "Getting the current temperature...",
+    "current-temperature": "Current temperature",
+    "retry": "Retry",
+    "create": "Create",
+    "cancel": "Cancel",
+    "errors": {
+      "activity-type-required": "Select an activity type.",
+      "participant-name-required": "Enter the participant name.",
+      "participants-min": "Participants must be greater than zero."
+    }
+  },
+  "activity-types": {
+    "fitness": "Fitness",
+    "yoga": "Yoga",
+    "swimming": "Swimming",
+    "cycling": "Cycling"
+  },
+  "page-not-found": {
+    "title": "Page Not Found",
+    "message": "The route {{path}} was not found.",
+    "back-home": "Back to Home"
+  },
+  "errors": {
+    "api-unavailable": "The reservations service is not available. Check that the fake API is running.",
+    "request-failed": "The request could not be completed. Please try again.",
+    "weather-unavailable": "The current temperature could not be obtained. The reservation cannot be created until a valid temperature is available.",
+    "capacity-exceeded": "Participants exceed the available capacity of the sports center.",
+    "sports-center-not-found": "No sports center offers the selected activity."
+  }
+}

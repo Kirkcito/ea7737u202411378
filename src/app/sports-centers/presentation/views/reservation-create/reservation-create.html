@@ -1,0 +1,59 @@
+<section class="reservation-create" aria-labelledby="reservation-create-title">
+  <h1 id="reservation-create-title">{{ 'reservation-create.title' | translate }}</h1>
+  <p class="subtitle">{{ 'reservation-create.subtitle' | translate }}</p>
+
+  <mat-card appearance="outlined">
+    <form [formGroup]="form" (ngSubmit)="create()" [attr.aria-label]="'reservation-create.title' | translate">
+      <mat-card-content class="form-content">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-create.activity-type' | translate }}</mat-label>
+          <mat-select formControlName="activityType" required>
+            @for (activityType of activityTypes; track activityType) {
+              <mat-option [value]="activityType">{{ 'activity-types.' + activityType | translate }}</mat-option>
+            }
+          </mat-select>
+          @if (sportsCenter(); as center) {
+            <mat-hint>{{ center.name }} · {{ 'reservation-create.available-capacity' | translate }}: {{ availableCapacity() }}</mat-hint>
+          }
+          <mat-error>{{ 'reservation-create.errors.activity-type-required' | translate }}</mat-error>
+        </mat-form-field>
+
+        <div class="weather" role="status" aria-live="polite">
+          @if (weatherStore.loading()) {
+            <mat-progress-spinner mode="indeterminate" diameter="24"
+                                  [attr.aria-label]="'reservation-create.loading-weather' | translate"/>
+            <span>{{ 'reservation-create.loading-weather' | translate }}</span>
+          } @else if (weatherStore.currentWeather(); as weather) {
+            <span>{{ 'reservation-create.current-temperature' | translate }}: <strong>{{ weather.temperature | number:'1.1-1' }} °C</strong></span>
+          } @else if (weatherStore.error()) {
+            <span class="error" role="alert">{{ weatherStore.error()! | translate }}</span>
+            <button mat-button type="button" (click)="loadWeather()">{{ 'reservation-create.retry' | translate }}</button>
+          }
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-create.participant-name' | translate }}</mat-label>
+          <input matInput formControlName="participantName" required autocomplete="name"/>
+          <mat-error>{{ 'reservation-create.errors.participant-name-required' | translate }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-create.participants' | translate }}</mat-label>
+          <input matInput type="number" formControlName="participants" min="1" required/>
+          <mat-error>{{ 'reservation-create.errors.participants-min' | translate }}</mat-error>
+        </mat-form-field>
+        @if (exceedsCapacity() && form.controls.participants.valid) {
+          <p class="error" role="alert">{{ 'errors.capacity-exceeded' | translate }}</p>
+        }
+
+        @if (errorMessage()) {
+          <p class="error" role="alert">{{ errorMessage()! | translate }}</p>
+        }
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button type="button" (click)="cancel()">{{ 'reservation-create.cancel' | translate }}</button>
+        <button mat-flat-button type="submit" [disabled]="!canCreate()">{{ 'reservation-create.create' | translate }}</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>
